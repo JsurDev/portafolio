@@ -1,0 +1,54 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 40px 0; /*el 40px es arriba/abajo , 0 es derecha/izquierda*/
+
+  .logo {
+    display: flex; /*activamos flex*/
+    flex-direction: column; /*una debajo de la otra*/
+    gap: 5px;
+
+    .titulo {
+      font-size: 34px;
+      font-family: "Merriweather", serif;
+      color: var(--shade-8);
+    }
+
+    .subtitulo {
+      font-size: 16px;
+      color: var(--secundario);
+      font-weight: 500;
+    }
+  }
+
+  .navbar {
+    display: flex; /*por defecto ROW:una seguida de la otra*/
+    flex-wrap: wrap;
+    justify-content: center; /*alineamos horizontalmente al centro*/
+    gap: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      .logo {
+        grid-column: 1 /-1; /*empieza en la 1, termina en la -1,ocupa todo el ancho disponible*/
+        text-align: center;
+        align-items: center; /* Centra el título y subtítulo flex */
+      }
+      .navbar {
+        grid-column: span 2;
+        justify-content: flex-start; /*mantengo los titulos a la izquierda*/
+        gap: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    display: flex; /*activamos flex*/
+    flex-direction: column; /*se alinean: una bajo la otra*/
+    align-items: center; /*centramos horizontalmente*/
+    gap: 20px;
+  }
+}
