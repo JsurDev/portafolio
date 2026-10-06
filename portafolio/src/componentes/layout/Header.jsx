@@ -1,4 +1,5 @@
 import "./Header.css";
+import DarkModeButton from "../DarkModeButton.jsx";
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
           <a href="#">Proyectos</a>
           <a href="#">Contacto</a>
         </nav>
-        <button>Dark Mode</button>
+        <DarkModeButton />
       </header>
     </>
   );
