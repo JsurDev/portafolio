@@ -5,7 +5,7 @@ const DarkModeButton = () => {
     <>
       <label className="dark-mode">
         <input type="checkbox" className="dark-mode" id="dark-mode" />
-        <span className="icono sol">
+        <span className="icono sol active">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

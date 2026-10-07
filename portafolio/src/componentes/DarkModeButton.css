@@ -1,0 +1,34 @@
+.dark-mode {
+  background: var(--shade-2);
+  display: flex;
+  justify-content: flex-end; /*Alineamos de forma vertical*/
+  border-radius: 100px;
+  overflow: hidden; /*Oculta el exceso*/
+  cursor: pointer;
+
+  input {
+    display: none; /*ocultamos el checkbox*/
+  }
+
+  .icono {
+    padding: 11px 13px; /*arriba/abajo y izquierda/derecha*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    color: var(--shade-7);
+
+    &.active {
+      background: rgb(37, 51, 69);
+      border: 2px solid var(--shade-2);
+    }
+
+    &.sol.active svg {
+      color: #adf216;
+    }
+
+    &.luna.active svg {
+      color: #f2f2f2;
+    }
+  }
+}
