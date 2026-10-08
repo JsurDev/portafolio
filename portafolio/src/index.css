@@ -25,6 +25,10 @@ body {
   font-family: "Inter", serif;
   background-color: var(--shade-1);
   color: var(--shade-9);
+  &.dark {
+    background: var(--shade-9);
+    color: var(--shade-4);
+  }
 }
 
 a {
