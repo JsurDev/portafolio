@@ -3,22 +3,27 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const DarkModeButton = () => {
-  /*Dark Mode button */
-  const [modoOscuro, setModoOscuro] = useState(true);
+  const inicialEstado = JSON.parse(localStorage.getItem("dark-mode")) ?? false;
 
+  /*useState*/
+  const [modoOscuro, setModoOscuro] =
+    useState(inicialEstado); /*Oscuro por defecto */
+
+  /*Función que cambia el estado*/
   const toggleModoOscuro = () => {
-    setModoOscuro(!modoOscuro);
+    setModoOscuro(!modoOscuro); /* !modoOscuro: cambiar al estado contrario*/
+
+    localStorage.setItem("dark-mode", !modoOscuro);
   };
 
   /*Modo oscuro para toda la pagina */
-
   useEffect(() => {
     if (modoOscuro) {
       document.body.classList.add("dark"); /*Agregamos*/
     } else {
       document.body.classList.remove("dark"); /*Quitamos*/
     }
-  }, [modoOscuro]);
+  }, [modoOscuro]); /*Termina useEffect*/
 
   return (
     <>

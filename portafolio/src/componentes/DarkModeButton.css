@@ -1,3 +1,5 @@
+/* el .dark-mode es de className no del id */
+
 .dark-mode {
   background: var(--shade-2);
   display: flex;

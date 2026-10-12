@@ -17,8 +17,9 @@
   --shade-8: #404040;
   --shade-9: #0d0d0d;
   --shade-10: #000000;
-  --primario: #d83a3a;
+  --primario: #3882d1;
   --secundario: #2062bd;
+  --tercero: #7e8a9b;
 }
 
 body {
@@ -37,6 +38,9 @@ a {
   font-weight: 500;
   &:hover {
     text-decoration: underline;
+  }
+  .dark & {
+    color: var(--shade-4);
   }
 }
 
