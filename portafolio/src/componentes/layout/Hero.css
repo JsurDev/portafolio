@@ -1,0 +1,55 @@
+.hero {
+  background: url("../../../public/assets/fondo.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 100px 70px; /*padding-top y padding-bottom*/
+  color: #fff;
+  position: relative; /*trabaja con position absolute*/
+
+  .contenido {
+    position: relative;
+    z-index: 2;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute; /*Evita tomar todo el body*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(6, 35, 52, 0.6));
+    z-index: 1;
+  }
+
+  .titulo {
+    font-family: "Merriweather", serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--shade-2);
+    span {
+      display: block;
+    }
+  }
+
+  .subtitulo {
+    line-height: 26px;
+    color: var(--shade-3);
+  }
+
+  .botones {
+    display: flex;
+    gap: 20px;
+    .boton.transparente {
+      background: rgba(255, 255, 255, 0.1);
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}

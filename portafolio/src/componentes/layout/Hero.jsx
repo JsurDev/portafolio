@@ -1,3 +1,5 @@
+import "./Hero.css";
+
 const Hero = () => {
   return (
     <>
@@ -8,7 +10,7 @@ const Hero = () => {
           </h3>
           <p className="subtitulo">Fullstack web developer G'</p>
           <div className="botones " h>
-            <a href="proyectos" className="botones transparente">
+            <a href="proyectos" className="boton transparente">
               Proyectos
               <div className="icono">
                 <svg
@@ -23,7 +25,7 @@ const Hero = () => {
                 </svg>
               </div>
             </a>
-            <a href="contacto" className="botones transparente">
+            <a href="contacto" className="boton">
               Contacto
               <div className="icono">
                 <svg
