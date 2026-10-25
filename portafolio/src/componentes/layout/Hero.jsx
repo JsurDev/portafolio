@@ -9,7 +9,7 @@ const Hero = () => {
             <span>creando</span>
           </h3>
           <p className="subtitulo">Fullstack web developer G'</p>
-          <div className="botones " h>
+          <div className="botones ">
             <a href="proyectos" className="boton transparente">
               Proyectos
               <div className="icono">
