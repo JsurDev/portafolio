@@ -1,5 +1,4 @@
 import "./Hero.css";
-
 const Hero = () => {
   return (
     <>
@@ -41,9 +40,17 @@ const Hero = () => {
             </a>
           </div>
         </div>
+        <div className="video-container">
+          <video
+            src="./assets/video1.mp4"
+            loop
+            autoPlay
+            classname="video"
+            type="video/mp4"
+          ></video>
+        </div>
       </section>
     </>
   );
 };
-
 export default Hero;
