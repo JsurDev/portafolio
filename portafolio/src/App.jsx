@@ -1,6 +1,7 @@
 import Header from "./componentes/layout/Header.jsx";
 import Hero from "./componentes/layout/Hero.jsx";
 import Clientes from "./componentes/layout/Clientes.jsx";
+import Trabajos from ".//componentes/layout/Trabajos.jsx";
 function App() {
   return (
     <>
@@ -8,6 +9,7 @@ function App() {
         <Header />
         <Hero />
         <Clientes />
+        <Trabajos />
       </div>
     </>
   );

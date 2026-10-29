@@ -1,3 +1,5 @@
+import "./Clientes.css";
+
 const Clientes = () => {
   return (
     <>
@@ -13,31 +15,26 @@ const Clientes = () => {
             src="./assets/logo/automobile.svg"
             alt="Logo auto"
             className="logo"
-            style={{ width: "100px", height: "auto" }}
           />
           <img
             src="./assets/logo/hotel.svg"
             alt="Logo hotel"
             className="logo"
-            style={{ width: "100px", height: "auto" }}
           />
           <img
             src="./assets/logo/office.svg"
             alt="Logo oficina"
             className="logo"
-            style={{ width: "100px", height: "auto" }}
           />
           <img
             src="./assets/logo/renting.svg"
             alt="Logo Rental auto"
             className="logo"
-            style={{ width: "100px", height: "auto" }}
           />
           <img
             src="./assets/logo/store.svg"
             alt="Logo Tienda"
             className="logo"
-            style={{ width: "100px", height: "auto" }}
           />
         </div>
       </section>
