@@ -73,3 +73,38 @@ a {
     color: #fff;
   }
 }
+
+.clientes,
+.trabajos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+
+    .titulo {
+      font-family: "Merriweather", serif;
+      color: var(--shade-7);
+      font-size: 25px;
+      font-weight: 700;
+
+      .dark & {
+        color: var(--shade-2);
+      }
+    }
+    .subtitulo {
+      font-size: 17px;
+      color: var(--shade-6);
+      .dark & {
+        color: var(--shade--4);
+      }
+    }
+  }
+}
