@@ -14,13 +14,17 @@
       padding: 10px 20px;
       border-radius: 100px;
       cursor: pointer;
-      border: 1px solid var(--shade-3);
-      color: var(--shade-6);
+      border: 1px solid var(--shade-5);
+      color: var(--shade-7);
+      .dark & {
+        color: var(--shade-4);
+        border: 1px solid var(--shade-8);
+      }
     }
     input[type="radio"] {
       display: none; /*Eliminamos el circulo clickeable*/
       &:checked + .opcion {
-        background-color: var(--shade-3);
+        background-color: var(--primario-hoover);
         color: var(--shade-1);
       }
     }
@@ -36,22 +40,56 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px 20px;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 420px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     .trabajo {
       .thumb {
         width: 100%;
         display: inline-block;
         border-radius: 10px;
+        margin-bottom: 9px;
         overflow: hidden; /*Para que la imagen no se salga del contenedor y se redondeen las esquinas*/
         img {
           width: 100%;
           vertical-align: top;
           transform: scale(110%);
-          transition: 0.3s ease-in-out;
+          transition: 0.1s ease-in-out;
         }
       }
 
       &:hover img {
         transform: scale(115%);
+      }
+      .info {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .nombre {
+          display: inline-block;
+          color: var(--shade-10);
+          font-size: 17px;
+          font-weight: 600;
+          margin-bottom: 5px;
+         /* text-decoration: none;*//
+        }
+        .categoria {
+          font-size: 14.5px;
+          color: var(--shade-6);
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          color: var(--primario);
+        }
       }
     }
   }
