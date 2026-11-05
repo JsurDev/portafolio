@@ -1,7 +1,7 @@
 const trabajos = [
   {
     id: 1,
-    categoria: "diseño-web",
+    categoria: "WebDesign",
     thumb: {
       url: "./assets/logo/2.png",
       alt: "Trabajo 1",
@@ -41,7 +41,7 @@ const trabajos = [
   },
   {
     id: 2,
-    categoria: "desarrollo-web",
+    categoria: "AImodels",
     thumb: {
       url: "./assets/logo/1.png",
       alt: "Trabajo 2",
@@ -81,7 +81,7 @@ const trabajos = [
   },
   {
     id: 3,
-    categoria: "aplicaciones-moviles",
+    categoria: "MobileApp",
     thumb: {
       url: "./assets/logo/3.png",
       alt: "Trabajo 3",
@@ -121,7 +121,7 @@ const trabajos = [
   },
   {
     id: 4,
-    categoria: "desarrollo-software",
+    categoria: "MobileApp",
     thumb: {
       url: "./assets/logo/4.png",
       alt: "Trabajo 4",
@@ -161,7 +161,7 @@ const trabajos = [
   },
   {
     id: 5,
-    categoria: "diseño-web",
+    categoria: "DeskApp",
     thumb: {
       url: "./assets/logo/5.png",
       alt: "Trabajo 5",
@@ -201,7 +201,7 @@ const trabajos = [
   },
   {
     id: 6,
-    categoria: "desarrollo-web",
+    categoria: "WebDesign",
     thumb: {
       url: "./assets/logo/6.png",
       alt: "Trabajo 6",
@@ -241,7 +241,7 @@ const trabajos = [
   },
   {
     id: 7,
-    categoria: "aplicaciones-moviles",
+    categoria: "MobileApp",
     thumb: {
       url: "./assets/logo/7.png",
       alt: "Trabajo 7",
@@ -281,7 +281,7 @@ const trabajos = [
   },
   {
     id: 8,
-    categoria: "desarrollo-software",
+    categoria: "DeskApp",
     thumb: {
       url: "./assets/logo/8.png",
       alt: "Trabajo 8",
@@ -321,7 +321,7 @@ const trabajos = [
   },
   {
     id: 9,
-    categoria: "diseño-web",
+    categoria: "WebDesign",
     thumb: {
       url: "./assets/logo/sofware-dev-2.png",
       alt: "Trabajo 9",
@@ -361,7 +361,7 @@ const trabajos = [
   },
   {
     id: 10,
-    categoria: "desarrollo-web",
+    categoria: "WebDesign",
     thumb: {
       url: "./assets/logo/sofware-dev-3.png",
       alt: "Trabajo 10",
@@ -401,7 +401,7 @@ const trabajos = [
   },
   {
     id: 11,
-    categoria: "aplicaciones-moviles",
+    categoria: "MobileApp",
     thumb: {
       url: "./assets/logo/2.png",
       alt: "Trabajo 11",
@@ -441,7 +441,7 @@ const trabajos = [
   },
   {
     id: 12,
-    categoria: "desarrollo-software",
+    categoria: "DeskApp",
     thumb: {
       url: "./assets/logo/4.png",
       alt: "Trabajo 12",

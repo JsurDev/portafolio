@@ -1,8 +1,31 @@
 import "./Trabajos.css";
+import { useState } from "react";
 import trabajos from "../data/trabajos";
-console.log(trabajos);
+import Modal from "../Modal";
 
 const Trabajos = () => {
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
+  const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
+
+  const handleChange = (e) => {
+    const categoria = e.target.id;
+    setCategoriaSeleccionada(categoria);
+
+    if (categoria === "todos") {
+      setTrabajosFiltrados(trabajos);
+    } else {
+      /*accedemos a la lista de todos los "trabajos (trabajos.jsx)" */
+      /*comprobamos si tiene una "categoria" que sea igual a la categoria que maneja el handleChange  */
+      /* */
+      const nuevosTrabajos = trabajos.filter((trabajoLista) => {
+        if (trabajoLista.categoria === categoria) {
+          return true;
+        }
+      });
+      setTrabajosFiltrados(nuevosTrabajos);
+    }
+  };
+
   return (
     <>
       <section className="trabajos" id="trabajos">
@@ -15,29 +38,58 @@ const Trabajos = () => {
         </div>
         <div className="filtros">
           <label htmlFor="todos">
-            <input type="radio" name="categoria" id="todos" />
+            <input
+              type="radio"
+              name="categoria"
+              id="todos"
+              onChange={handleChange}
+              checked={categoriaSeleccionada === "todos"}
+            />
             <span className="opcion">Todos</span>
           </label>
           <label htmlFor="WebDesign">
-            <input type="radio" name="categoria" id="WebDesign" />
+            <input
+              type="radio"
+              name="categoria"
+              id="WebDesign"
+              onChange={handleChange}
+              checked={categoriaSeleccionada === "WebDesign"}
+            />
             <span className="opcion">Web</span>
           </label>
           <label htmlFor="AImodels">
-            <input type="radio" name="categoria" id="AImodels" />
+            <input
+              type="radio"
+              name="categoria"
+              id="AImodels"
+              onChange={handleChange}
+              checked={categoriaSeleccionada === "AImodels"}
+            />
             <span className="opcion">AI</span>
           </label>
           <label htmlFor="MobileApp">
-            <input type="radio" name="categoria" id="MobileApp" />
+            <input
+              type="radio"
+              name="categoria"
+              id="MobileApp"
+              onChange={handleChange}
+              checked={categoriaSeleccionada === "MobileApp"}
+            />
             <span className="opcion">Mobile</span>
           </label>
           <label htmlFor="DeskApp">
-            <input type="radio" name="categoria" id="DeskApp" />
+            <input
+              type="radio"
+              name="categoria"
+              id="DeskApp"
+              onChange={handleChange}
+              checked={categoriaSeleccionada === "DeskApp"}
+            />
             <span className="opcion">Desk</span>
           </label>
         </div>
-
         <div className="grid">
-          {trabajos.map((trabajo, index) => {
+          {trabajosFiltrados.map((trabajo, index) => {
             return (
               <div className="trabajo">
                 <a href="#" className="thumb">
@@ -76,6 +128,8 @@ const Trabajos = () => {
           })}
         </div>
       </section>
+
+      <Modal />
     </>
   );
 };
