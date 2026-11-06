@@ -1,3 +1,5 @@
+import "../componentes/Modal.css";
+
 const Modal = () => {
   return (
     <>
@@ -18,6 +20,21 @@ const Modal = () => {
           <div className="grid">
             <div className="thumb">
               <img src="./assets/logo/1.png" alt="" />
+            </div>
+            <div className="info">
+              <div className="head">
+                <h3 className="titulo">Trabajo 1</h3>
+                <span className="categoria">Categoria 1</span>
+              </div>
+              <div className="body">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Repellat quia eos similique consequatur tenetur deleniti
+                  architecto odit magnam. Suscipit blanditiis nihil obcaecati
+                  facilis ex saepe accusantium iste debitis dolore architecto.
+                </p>
+                <img src="./assets/logo/1.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
