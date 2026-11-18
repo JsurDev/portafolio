@@ -1,11 +1,12 @@
 import "../componentes/Modal.css";
 
-const Modal = () => {
+const Modal = ({ closeModal, trabajo }) => {
+  /*  console.log(trabajo); */
   return (
     <>
-      <div className="overlay" id="overlay">
+      <div className="overlay active" id="overlay" onClick={closeModal}>
         <div className="modal">
-          <button className="boton-cerrar" id="btn-cerrar">
+          <button className="boton-cerrar" id="btn-cerrar" onClick={closeModal}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -19,12 +20,12 @@ const Modal = () => {
 
           <div className="grid">
             <div className="thumb">
-              <img src="./assets/logo/1.png" alt="" />
+              <img src={trabajo.thumb.url} alt={trabajo.thumb.alt} />
             </div>
             <div className="info">
               <div className="head">
-                <h3 className="titulo">Trabajo 1</h3>
-                <span className="categoria">Categoria 1</span>
+                <h3 className="titulo">{trabajo.info.nombre}</h3>
+                <span className="categoria">{trabajo.info.categoria}</span>
               </div>
               <div className="body">
                 <p>

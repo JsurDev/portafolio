@@ -45,7 +45,8 @@ const Hero = () => {
             src="./assets/video1.mp4"
             loop
             autoPlay
-            classname="video"
+            muted
+            className="video"
             type="video/mp4"
           ></video>
         </div>

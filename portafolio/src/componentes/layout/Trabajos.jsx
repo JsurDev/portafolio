@@ -1,11 +1,18 @@
 import "./Trabajos.css";
+
+import trabajos from "../data/trabajos"; /*donde estan los datos*/
 import { useState } from "react";
-import trabajos from "../data/trabajos";
 import Modal from "../Modal";
 
 const Trabajos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
-  const [trabajosFiltrados, setTrabajosFiltrados] = useState(trabajos);
+  const [trabajosFiltrados, setTrabajosFiltrados] =
+    useState(trabajos); /*donde estan los datos*/
+  const [estadoModal, setEstadoModal] =
+    useState(false); /*para mostrar el modal */
+
+  /*Guardamos el trabjo seleccionado */
+  const [trabajoSeleccionado, setTrabajoSeleccionado] = useState(trabajos[0]);
 
   const handleChange = (e) => {
     const categoria = e.target.id;
@@ -25,6 +32,24 @@ const Trabajos = () => {
       setTrabajosFiltrados(nuevosTrabajos);
     }
   };
+
+  /*Para mostrar el modal */
+  const openModal = (e, id) => {
+    e.preventDefault();
+    setEstadoModal(true);
+
+    const trabajo = trabajos.find((trabajo) => {
+      if (trabajo.id === id) {
+        return true;
+      }
+    });
+    /*console.log(trabajo);*/
+    setTrabajoSeleccionado(trabajo);
+  };
+
+  const closeModal = () => {
+    setEstadoModal(false);
+  }; /*Para mostrar el modal */
 
   return (
     <>
@@ -91,8 +116,12 @@ const Trabajos = () => {
         <div className="grid">
           {trabajosFiltrados.map((trabajo, index) => {
             return (
-              <div className="trabajo">
-                <a href="#" className="thumb">
+              <div className="trabajo" key={trabajo.id}>
+                <a
+                  href="#"
+                  className="thumb"
+                  onClick={(e) => openModal(e, trabajo.id)}
+                >
                   <img
                     loading="lazy"
                     src={trabajo.thumb.url}
@@ -101,12 +130,20 @@ const Trabajos = () => {
                 </a>
                 <div className="info">
                   <div className="textos">
-                    <a href="#" className="nombre">
+                    <a
+                      href="#"
+                      className="nombre"
+                      onClick={(e) => openModal(e, trabajo.id)}
+                    >
                       Trabajo 1
                     </a>
                     <p className="categoria">Diseño web</p>
                   </div>
-                  <a href="#" className="btn-ir">
+                  <a
+                    href="#"
+                    className="btn-ir"
+                    onClick={(e) => openModal(e, trabajo.id)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -128,8 +165,11 @@ const Trabajos = () => {
           })}
         </div>
       </section>
-
-      <Modal />
+      {estadoModal && (
+        <Modal closeModal={closeModal} trabajo={trabajoSeleccionado} />
+      )}
+      {/* si es verdadero se muestra el modal*/}
+      {/*para darle acceso al modal debo trabajar con PROPS y pasarle la funcion al Modal.jsx*/}
     </>
   );
 };
